@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>興國橡膠 · 洽案進度回覆 2026.06.23</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #2B5937;
+  --green:  #4B872F;
+  --gold:   #C0A434;
+  --cream:  #F5F3EE;
+  --bg:     #F7F6F2;
+  --text:   #333333;
+  --muted:  #888888;
+  --border: #E8E6E1;
+  --white:  #FFFFFF;
+  --up:     #4B872F;
+  --down:   #C0533A;
+  --neutral:#8890A0;
+  --gold-light: #FDF7E3;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--forest);
+  padding: 32px 40px 0;
+  border-bottom: 3px solid var(--gold);
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 28px;
+}
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.header .meta {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 1px;
+}
+.header .to-line {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+}
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(192,164,52,0.15);
+  border: 1px solid rgba(192,164,52,0.5);
+  color: #E8CC6A;
+  padding: 5px 14px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+.header-kpi {
+  text-align: right;
+}
+.header-kpi .num {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.header-kpi .lbl {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px 24px;
+}
+.section { margin-bottom: 36px; }
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--forest);
+  border-left: 4px solid var(--green);
+  padding-left: 12px;
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+/* ── KPI GRID ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.kpi-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+}
+.kpi-label { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+.kpi-value { font-size: 26px; font-weight: 900; color: var(--gold); }
+.kpi-value.dark  { color: var(--forest); }
+.kpi-value.red   { color: var(--down); }
+.kpi-value.green { color: var(--green); }
+.kpi-unit  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* ── PROPOSAL CARDS ── */
+.proposal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.proposal-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform .15s, box-shadow .15s;
+}
+.proposal-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.07); }
+.proposal-card.featured { border: 2px solid var(--green); }
+.proposal-card.dimmed   { opacity: .58; }
+.card-head { padding: 15px 18px; color: white; }
+.card-head .num  { font-size: 10px; letter-spacing: 2px; opacity: .6; margin-bottom: 3px; }
+.card-head h3    { font-size: 14px; font-weight: 700; }
+.card-body { padding: 15px 18px; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+.s-pending { background: var(--gold-light); color: #7A5A00; }
+.s-active  { background: #E8F4E8;           color: #2B5937; }
+.s-off     { background: #F1F5F9;           color: #64748B; }
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.price-row:last-of-type { border-bottom: none; }
+.price-lbl { color: var(--muted); }
+.price-val         { font-weight: 700; color: var(--gold); }
+.price-val.dark    { color: var(--forest); }
+.price-val.muted   { color: var(--muted); font-weight: 400; }
+.price-val.danger  { color: var(--down); }
+.card-note {
+  margin-top: 11px; padding: 8px 10px;
+  border-radius: 3px; font-size: 12px; line-height: 1.5;
+}
+.note-gold { background: var(--gold-light); color: #7A5A00; }
+.note-green{ background: #E8F4E8;           color: #1A4023; }
+.note-gray { background: #F1F5F9;           color: #475569; }
+
+/* ── TABLE ── */
+.table-wrap { overflow-x: auto; }
+.data-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--white); border: 1px solid var(--border);
+  font-size: 14px;
+}
+.data-table thead tr { background: var(--forest); color: white; }
+.data-table thead th { padding: 11px 15px; text-align: left; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.data-table tbody tr:nth-child(even) { background: #F8F8F5; }
+.data-table tbody td { padding: 11px 15px; border-bottom: 1px solid var(--border); }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.c-gold    { color: var(--gold);    font-weight: 700; }
+.c-forest  { color: var(--forest);  font-weight: 700; }
+.c-green   { color: var(--green);   font-weight: 700; }
+.c-down    { color: var(--down);    font-weight: 700; }
+.c-muted   { color: var(--muted); }
+
+/* ── CALCULATOR ── */
+.calculator {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 4px; padding: 24px;
+}
+.calc-hint { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.calc-lbl  { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+input[type="number"].ci {
+  width: 100%; padding: 9px 12px; border: 1px solid var(--border);
+  border-radius: 4px; font-size: 15px; font-family: inherit; color: var(--text);
+  background: white; transition: border-color .15s;
+}
+input[type="number"].ci:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(75,135,47,.1); }
+.calc-result {
+  padding: 18px; background: #F0F5EE;
+  border: 1px solid #C8DFC0; border-radius: 4px;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; text-align: center;
+}
+.r-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+.r-val   { font-size: 22px; font-weight: 900; color: var(--forest); }
+.r-val.red { color: var(--down); }
+.r-unit  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* ── CALLOUTS ── */
+.callout {
+  border-left: 4px solid var(--gold);
+  background: var(--gold-light);
+  padding: 14px 18px; margin-bottom: 16px;
+}
+.callout h4   { font-size: 13px; font-weight: 700; color: #7A5A00; margin-bottom: 5px; }
+.callout p    { font-size: 13px; color: #5C4200; line-height: 1.6; }
+.callout-green {
+  border-left: 4px solid var(--green);
+  background: #EEF5EA;
+  padding: 14px 18px; margin-bottom: 16px;
+}
+.callout-green h4 { font-size: 13px; font-weight: 700; color: var(--forest); margin-bottom: 5px; }
+.callout-green p  { font-size: 13px; color: var(--text);  line-height: 1.6; }
+
+/* ── BACKGROUND SECTIONS (new) ── */
+.bg-section-box {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 4px; margin-bottom: 14px; overflow: hidden;
+}
+.bg-section-head {
+  background: #F0F5EE; padding: 11px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.bg-num {
+  flex-shrink: 0; width: 24px; height: 24px;
+  background: var(--forest); color: white;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+}
+.bg-section-head h4 { font-size: 14px; font-weight: 700; color: var(--forest); }
+.bg-section-body { padding: 16px 20px; font-size: 14px; line-height: 1.75; color: var(--text); }
+.bg-section-body p { margin-bottom: 10px; }
+.bg-section-body p:last-child { margin-bottom: 0; }
+.highlight { color: var(--gold); font-weight: 700; }
+.highlight-green { color: var(--green); font-weight: 700; }
+.highlight-down  { color: var(--down);  font-weight: 700; }
+
+/* ── RECOMMENDATIONS ── */
+.rec-box {
+  background: var(--forest); color: white;
+  padding: 22px 24px; border-radius: 4px; margin-bottom: 12px;
+}
+.rec-box h3    { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+.rec-box p     { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.82); margin-bottom: 8px; }
+.rec-box p:last-child { margin-bottom: 0; }
+.price-cond    {
+  margin-top: 14px; padding: 12px 16px;
+  background: rgba(255,255,255,.07); border-left: 3px solid var(--gold);
+}
+.price-cond table { width: 100%; }
+.price-cond td { padding: 4px 8px; font-size: 13px; color: rgba(255,255,255,.85); }
+.price-cond td:last-child { color: var(--gold); font-weight: 700; text-align: right; }
+.em-gold  { color: var(--gold);  font-weight: 700; }
+
+/* ── SUPPLEMENTARY LIST ── */
+.supp-list { list-style: none; padding: 0; }
+.supp-list li {
+  display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start;
+}
+.supp-num {
+  flex-shrink: 0; width: 24px; height: 24px;
+  background: var(--forest); color: white;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; margin-top: 3px;
+}
+.supp-list li p { font-size: 14px; line-height: 1.7; color: var(--text); }
+.supp-note {
+  margin-top: 4px; padding: 8px 12px;
+  background: var(--gold-light); border-left: 3px solid var(--gold);
+  font-size: 13px; color: #7A5A00; line-height: 1.6;
+}
+
+/* ── MISC ── */
+.sep { height: 1px; background: var(--border); margin: 28px 0; }
+.footer {
+  background: var(--forest);
+  color: rgba(255,255,255,.45);
+  text-align: center; padding: 18px;
+  font-size: 12px; letter-spacing: .5px;
+}
+@media (max-width: 768px) {
+  .proposal-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: repeat(2,1fr); }
+  .calc-grid { grid-template-columns: 1fr; }
+  .calc-result { grid-template-columns: 1fr; }
+  .header { padding: 22px 18px 0; }
+  .container { padding: 22px 16px; }
+  .header h1 { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ───────────────── HEADER ───────────────── -->
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <!-- 瑞禾開發 Logo -->
+      <div class="logo-mark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 44" width="170" height="44">
+          <g fill="#C0A434" opacity="0.65">
+            <ellipse cx="11" cy="6"  rx="4"   ry="6"/>
+            <ellipse cx="6"  cy="16" rx="3.5"  ry="5.5" transform="rotate(-15 6 16)"/>
+            <ellipse cx="16" cy="16" rx="3.5"  ry="5.5" transform="rotate(15 16 16)"/>
+            <ellipse cx="7"  cy="26" rx="3"   ry="5"   transform="rotate(-20 7 26)"/>
+            <ellipse cx="15" cy="26" rx="3"   ry="5"   transform="rotate(20 15 26)"/>
+          </g>
+          <line x1="11" y1="2" x2="11" y2="44" stroke="#C0A434" stroke-width="1.5" opacity="0.35"/>
+          <rect x="24" y="4" width="36" height="36" rx="4" fill="#4B872F"/>
+          <text x="42" y="29" text-anchor="middle" font-family="Noto Sans TC,Microsoft JhengHei,sans-serif" font-size="20" font-weight="700" fill="white">禾</text>
+          <text x="70" y="21" font-family="Noto Sans TC,Microsoft JhengHei,sans-serif" font-size="15" font-weight="700" fill="white">瑞禾開發</text>
+          <text x="70" y="35" font-family="Noto Sans TC,Microsoft JhengHei,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">建築、房產整合團隊</text>
+        </svg>
+      </div>
+      <div class="meta">洽案進度回覆 · 機密文件</div>
+      <h1>興國橡膠廠地 洽案進度回覆</h1>
+      <div class="to-line">致 統一企業股份有限公司 ／ 大統益股份有限公司</div>
+      <div class="date-badge">
+        <span>●</span>
+        <span>股東會議紀要 ｜ 2026 年 6 月 23 日（一）08:00</span>
+      </div>
+    </div>
+    <div class="header-kpi">
+      <div class="lbl">進行中提案</div>
+      <div class="num">3</div>
+      <div class="lbl">PROPOSALS</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── KPI BAR ── -->
+  <div class="section">
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">大統益出價（乙工）</div>
+        <div class="kpi-value">26.9</div>
+        <div class="kpi-unit">萬元 / 坪</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">屋主回覆條件（乙工）</div>
+        <div class="kpi-value dark">27.5</div>
+        <div class="kpi-unit">萬元 / 坪</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">每坪價差（乙工）</div>
+        <div class="kpi-value red">－0.6</div>
+        <div class="kpi-unit">萬元 / 坪</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">大統益購置面積</div>
+        <div class="kpi-value green">2,383</div>
+        <div class="kpi-unit">坪（部分購置）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 三個提案 ── -->
+  <div class="section">
+    <div class="section-title">一、目前三個出價提案選項</div>
+    <div class="proposal-grid">
+
+      <!-- 大統益 -->
+      <div class="proposal-card featured">
+        <div class="card-head" style="background:var(--forest);">
+          <div class="num">提案 01 · 部分購置</div>
+          <h3>大統益 ／ 統一企業</h3>
+        </div>
+        <div class="card-body">
+          <div class="status-badge s-pending">● 協商中</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">2,383 坪 · 乙種工業區</div>
+          <div class="price-row">
+            <span class="price-lbl">乙工（大統益出價）</span>
+            <span class="price-val">26.9 萬/坪</span>
+          </div>
+          <div class="price-row">
+            <span class="price-lbl">乙工（屋主條件）</span>
+            <span class="price-val dark">27.5 萬/坪</span>
+          </div>
+          <div class="price-row">
+            <span class="price-lbl">道路用地（雙方共識）</span>
+            <span class="price-val">5.8 萬/坪</span>
+          </div>
+          <div class="card-note note-gold">► 屋主印象最佳，總經理曾親自到訪，信任度高，較屬意售予大統益</div>
+        </div>
+      </div>
+
+      <!-- 全廠買方 -->
+      <div class="proposal-card">
+        <div class="card-head" style="background:#1D4ED8;">
+          <div class="num">提案 02 · 整廠出售</div>
+          <h3>全廠買方（身份未揭露）</h3>
+        </div>
+        <div class="card-body">
+          <div class="status-badge s-active">● 評估中</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">全廠 · 買方身份待確認</div>
+          <div class="price-row">
+            <span class="price-lbl">乙工出價</span>
+            <span class="price-val muted">未達 28 萬/坪</span>
+          </div>
+          <div class="price-row">
+            <span class="price-lbl">買方背景</span>
+            <span class="price-val muted">台中工業區廠商（推測）</span>
+          </div>
+          <div class="price-row">
+            <span class="price-lbl">揭露方式</span>
+            <span class="price-val muted">意向書 ＋ 支票</span>
+          </div>
+          <div class="card-note" style="background:#E8F0FA;color:#1E3A6E;">► 總價條件屬屋主可接受範圍，但身份未揭露，屋主仍有疑慮</div>
+        </div>
+      </div>
+
+      <!-- 黑松 -->
+      <div class="proposal-card dimmed">
+        <div class="card-head" style="background:var(--neutral);">
+          <div class="num">提案 03 · 已不優先</div>
+          <h3>黑松</h3>
+        </div>
+        <div class="card-body">
+          <div class="status-badge s-off">● 暫不考慮</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">因重訊事件及需求不符</div>
+          <div class="price-row">
+            <span class="price-lbl">需求面積符合度</span>
+            <span class="price-val danger">不完全相符</span>
+          </div>
+          <div class="price-row">
+            <span class="price-lbl">重訊事件影響</span>
+            <span class="price-val danger">重大</span>
+          </div>
+          <div class="price-row">
+            <span class="price-lbl">目前優先度</span>
+            <span class="price-val muted">最低</span>
+          </div>
+          <div class="card-note note-gray">► 興國橡膠已不再優先考慮，後續不積極推進</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 價格比較表 ── -->
+  <div class="section">
+    <div class="section-title">二、大統益 2383坪 價格條件比較表</div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>地目</th>
+            <th>大統益出價</th>
+            <th>屋主回覆條件（部分購置）</th>
+            <th>屋主可接受條件（整廠）</th>
+            <th>差距（部分購置）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>乙種工業區土地</strong></td>
+            <td class="c-gold">26.9 萬 / 坪</td>
+            <td class="c-forest">27.5 萬 / 坪</td>
+            <td class="c-green">27.0 萬 / 坪</td>
+            <td class="c-down">▼ 0.6 萬 / 坪</td>
+          </tr>
+          <tr>
+            <td><strong>道路用地</strong></td>
+            <td class="c-gold">5.8 萬 / 坪</td>
+            <td class="c-forest">5.8 萬 / 坪</td>
+            <td class="c-green">5.8 萬 / 坪</td>
+            <td class="c-muted">— 雙方共識</td>
+          </tr>
+          <tr>
+            <td><strong>農地</strong></td>
+            <td class="c-muted">（本次不含）</td>
+            <td class="c-muted">（本次不含）</td>
+            <td class="c-green">5.8 萬 / 坪</td>
+            <td class="c-muted">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── 試算器 ── -->
+  <div class="section">
+    <div class="section-title">三、總價差異試算器</div>
+    <div class="calculator">
+      <div class="calc-hint">輸入坪數，自動計算大統益出價 vs. 屋主條件之總價差距</div>
+      <div class="calc-grid">
+        <div>
+          <label class="calc-lbl">乙種工業區坪數（坪）</label>
+          <input type="number" class="ci" id="c-yi"   value="2383" min="0" step="1">
+        </div>
+        <div>
+          <label class="calc-lbl">道路用地坪數（坪）</label>
+          <input type="number" class="ci" id="c-road" value="0"    min="0" step="1">
+        </div>
+      </div>
+      <div class="calc-result">
+        <div>
+          <div class="r-label">大統益出價總額</div>
+          <div class="r-val" id="r-buyer">6,408</div>
+          <div class="r-unit">萬元</div>
+        </div>
+        <div>
+          <div class="r-label">屋主條件總額</div>
+          <div class="r-val" id="r-seller">6,553</div>
+          <div class="r-unit">萬元</div>
+        </div>
+        <div>
+          <div class="r-label">總價差距</div>
+          <div class="r-val red" id="r-diff">145</div>
+          <div class="r-unit">萬元（屋主較高）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 整廠 Callout ── -->
+  <div class="section">
+    <div class="callout">
+      <h4>► 整廠購置選項（建議統一 ／ 大統益同步評估）</h4>
+      <p>若統一 ／ 大統益有意評估整廠購置，興國橡膠目前可接受之整廠價格為：乙種工業區土地 <strong>27萬/坪</strong>（較部分購置條件低0.5萬/坪）、道路用地及農地 <strong>5.8萬/坪</strong>。整廠方案可消除屋主對全廠買方身份之疑慮，鞏固大統益之優先地位。</p>
+    </div>
+  </div>
+
+  <!-- ── 洽案背景說明（新） ── -->
+  <div class="section">
+    <div class="section-title">四、洽案背景說明</div>
+
+    <!-- 一 -->
+    <div class="bg-section-box">
+      <div class="bg-section-head">
+        <div class="bg-num">一</div>
+        <h4>黑松重訊後，買方對土地單價的試算與疑問</h4>
+      </div>
+      <div class="bg-section-body">
+        <p>6月17日（三）黑松發出重訊後，買方有請我們協助試算該價格換算後的土地單價。</p>
+        <p>若以總價 <span class="highlight">40,600 萬</span> 除以 <span class="highlight">1,639.4 坪</span> 計算，約為 <span class="highlight">24.76 萬／坪</span>；若依工業土地及道路用地比例拆算，工業土地單價約落在 <span class="highlight">27 萬／坪</span> 左右。</p>
+        <p>因此，買方確實有針對我們先前回覆的 <span class="highlight">27.5 萬／坪</span> 提出疑問。統一方面也認為，黑松不太可能無緣無故發出該重訊，因此認為該資訊具有一定可信度。</p>
+        <p>當天買方曾試探性請我們轉達 <span class="highlight-down">26.5 萬／坪</span>，但我第一時間即明確告知，這個價格完全沒有機會，請他們重新評估其他價格。</p>
+      </div>
+    </div>
+
+    <!-- 二 -->
+    <div class="bg-section-box">
+      <div class="bg-section-head">
+        <div class="bg-num">二</div>
+        <h4>統一 ／ 大統益先行回覆 26.9 萬／坪的背景</h4>
+      </div>
+      <div class="bg-section-body">
+        <p>由於上週上班日只到星期四，對方內部來不及再召開會議，因此我們也持續催促他們盡快回覆其他價格。</p>
+        <p>6月22日（一），統一 ／ 大統益方面快速跳過部分內部程序，先回覆 <span class="highlight">26.9 萬／坪</span>。但這個金額是他們在確保統一內部可以接受的情況下，先提出的一個保守價格。</p>
+        <p>原本買方內部是要以 <span class="highlight">27.5 萬／坪</span> 作為評估基礎，確認該價格是否可行；但因為黑松重訊事件影響，短時間內無法立即重新召開會議確認，因此只能先回覆一個較保守、內部較有把握先提出的價格，也就是 <span class="highlight">26.9 萬／坪</span>。</p>
+        <p>我們也已明確告知，這個價格沒有機會。但黑松事件影響巨大，只能先做此回覆！</p>
+        <p>因為興國橡膠這邊 6月23日即將召開董事會，買方必須在會議前先回覆一個目前能提出的最高價格，所以他們只能先提出 26.9 萬／坪。</p>
+      </div>
+    </div>
+
+    <!-- 三 -->
+    <div class="bg-section-box">
+      <div class="bg-section-head">
+        <div class="bg-num">三</div>
+        <h4>買方表示後續仍有機會提高，並提出請求</h4>
+      </div>
+      <div class="bg-section-body">
+        <p>6月22日晚間，買方有再回覆表示，後續應該仍有機會往上提高價格。</p>
+        <p>但因為黑松重訊事件確實影響統一內部判斷，他們需要更多時間重新整理資訊、說明價格合理性，並再次向統一內部呈報確認。</p>
+        <p>買方想請問：興國橡膠是否能在 6月23日董事會上，針對 <span class="highlight">2,383 坪方案</span>，直接回覆乙種工業用地可授予統一 ／ 大統益的<span class="highlight">最低成交單價</span>。</p>
+        <p>先前回覆的價格是 <span class="highlight">27.5 萬／坪</span>。如果興國願意提供一個明確的最終價格，買方會再呈報統一內部，重新召開會議確認。（當然也可能維持 27.5，我們會再回報一次）</p>
+        <p style="background:var(--gold-light);border-left:3px solid var(--gold);padding:8px 12px;font-weight:600;color:#7A5A00;">買方希望這個數字可以是明確、最終，且只要達成即可取得本案的價格條件。</p>
+      </div>
+    </div>
+
+    <!-- 四 -->
+    <div class="bg-section-box">
+      <div class="bg-section-head">
+        <div class="bg-num">四</div>
+        <h4>一併回覆「整廠出售」總價</h4>
+      </div>
+      <div class="bg-section-body">
+        <p>希望興國橡膠這邊能一併回覆整廠出售予統一 ／ 大統益的總價。</p>
+        <p>因為統一 ／ 大統益原本就有機會評估整廠購置，只是因為時間急迫，所以先就 <span class="highlight-green">2,383 坪方案</span> 進行評估。</p>
+        <p style="color:var(--muted);font-size:13px;">以上補充重點：主要是協助貴公司了解買方目前價格變動的原因，以及後續仍有機會提高價格的前提條件。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 補充說明 ── -->
+  <div class="section">
+    <div class="section-title">五、補充說明</div>
+    <div class="callout-green">
+      <h4>股東整體傾向全廠出售，但大統益部分購置案仍具推進機會</h4>
+      <p>雖然興國橡膠股東整體上仍較傾向全廠出售，但就大統益2383坪部分購置案而言，如大統益最終願意接受乙工單坪27.5萬、道路用地單坪5.8萬之條件，仍有機會進一步推進。主要原因如下：</p>
+    </div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:20px 24px;">
+      <ul class="supp-list">
+        <li>
+          <div class="supp-num">1</div>
+          <p>屋主目前尚不清楚全廠買方之實際公司名稱，對買方背景仍有疑慮。</p>
+        </li>
+        <li>
+          <div class="supp-num">2</div>
+          <p>大統益總經理曾親自到訪，並清楚說明無法先行出具斡旋之原因。</p>
+        </li>
+        <li>
+          <div class="supp-num">3</div>
+          <p>興國橡膠股東較為樸實傳統，對於買方公司誠意與信任感相當重視。</p>
+        </li>
+        <li>
+          <div class="supp-num">4</div>
+          <p>目前股東對大統益公司印象較佳，也較屬意售予大統益。</p>
+        </li>
+        <li>
+          <div class="supp-num">5</div>
+          <div>
+            <p>業主預計於 <strong>6月24日</strong> 提供相關董事會議紀錄。</p>
+            <div class="supp-note">惟因內容涉及其他潛在買方及非大統益相關資訊，屆時將先行去除或遮蔽非本案相關內容後，再提供予大統益參考。</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── 建議作法 ── -->
+  <div class="section">
+    <div class="section-title">六、建議作法</div>
+    <div class="rec-box">
+      <h3>► 建議方向一：同步評估整廠購置</h3>
+      <p>建議統一 ／ 大統益同步評估整廠購置之可行性。整廠方案可有效消除屋主對全廠買方身份之疑慮，鞏固大統益在洽案中的優勢地位，且屋主對整廠可接受之乙工條件（27萬/坪）低於部分購置回覆條件（27.5萬/坪），整廠方案具有一定誘因。</p>
+    </div>
+    <div class="rec-box">
+      <h3>► 建議方向二：2383坪 部分購置方案推進條件</h3>
+      <p>若大統益仍以2383坪部分購置為主要方向，建議評估是否接受興國橡膠目前回覆條件：</p>
+      <div class="price-cond">
+        <table>
+          <tr><td>乙種工業區土地</td><td>27.5 萬 / 坪</td></tr>
+          <tr><td>道路用地</td><td>5.8 萬 / 坪</td></tr>
+        </table>
+      </div>
+      <p style="margin-top:12px;">如果大統益願意接受 <span class="em-gold">27.5萬／坪</span>，這一案仍然有機會先走2383坪；但若能同步評估整廠，對興國股東端的通過機率會更高。</p>
+      <p>如大統益可接受此條件，<span class="em-gold">建議先以口頭方式回覆價格意向</span>。因興國橡膠對大統益仍具高度信任感，若股東端後續確認同意，即可再安排正式程序推進，不需先出具斡旋金。</p>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+  <div style="font-size:12px;color:var(--muted);text-align:center;padding-bottom:4px;">
+    本報告依 2026年6月23日 08:00 興國橡膠股東會議內容整理，僅供洽案參考使用，請妥善保管。
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  瑞禾開發 · 建築、房產整合團隊 &nbsp;｜&nbsp; 機密文件，請妥善保管
+</div>
+
+<script>
+function calcUpdate() {
+  var yi   = parseFloat(document.getElementById('c-yi').value)   || 0;
+  var road = parseFloat(document.getElementById('c-road').value) || 0;
+  var buyer  = yi * 26.9 + road * 5.8;
+  var seller = yi * 27.5 + road * 5.8;
+  var diff   = seller - buyer;
+  document.getElementById('r-buyer').textContent  = Math.round(buyer).toLocaleString();
+  document.getElementById('r-seller').textContent = Math.round(seller).toLocaleString();
+  document.getElementById('r-diff').textContent   = Math.round(diff).toLocaleString();
+}
+document.getElementById('c-yi').addEventListener('input',   calcUpdate);
+document.getElementById('c-road').addEventListener('input', calcUpdate);
+calcUpdate();
+</script>
+</body>
+</html>

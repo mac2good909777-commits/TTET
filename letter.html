@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>交易安全說明 · 瑞禾開發</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #2B5937;
+  --green:  #4B872F;
+  --gold:   #C0A434;
+  --cream:  #F5F3EE;
+  --bg:     #F7F6F2;
+  --text:   #333333;
+  --muted:  #888888;
+  --border: #E8E6E1;
+  --white:  #FFFFFF;
+  --down:   #C0533A;
+  --gold-light: #FDF7E3;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--forest);
+  padding: 28px 40px;
+  border-bottom: 3px solid var(--gold);
+}
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.header-meta { font-size: 11px; color: rgba(255,255,255,.45); letter-spacing: 2px; margin-top: 6px; }
+
+/* ── CONTAINER ── */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+/* ── GREETING ── */
+.greeting {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── BODY TEXT ── */
+.body-text {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.hl-box {
+  background: var(--forest);
+  color: white;
+  padding: 20px 24px;
+  border-radius: 4px;
+  margin: 24px 0;
+}
+.hl-box p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.88);
+}
+.hl-box strong { color: var(--gold); font-weight: 700; }
+
+/* ── GOLD CALLOUT ── */
+.gold-callout {
+  border-left: 4px solid var(--gold);
+  background: var(--gold-light);
+  padding: 14px 20px;
+  margin: 22px 0;
+}
+.gold-callout p { font-size: 14px; color: #5C4200; line-height: 1.7; }
+.gold-callout strong { color: #7A5A00; }
+
+/* ── GREEN CALLOUT ── */
+.green-callout {
+  border-left: 4px solid var(--green);
+  background: #EEF5EA;
+  padding: 14px 20px;
+  margin: 22px 0;
+}
+.green-callout p { font-size: 14px; color: #1A4023; line-height: 1.7; }
+
+/* ── CONCEPT BOX ── */
+.concept-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 22px 0;
+}
+.concept-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--forest);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.concept-title::before {
+  content: '';
+  display: inline-block;
+  width: 3px; height: 14px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.concept-box p { font-size: 14px; color: var(--text); line-height: 1.75; }
+
+/* ── SECTION DIVIDER ── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 32px 0;
+}
+
+/* ── REFERENCE CARDS ── */
+.ref-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.ref-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 18px;
+  text-decoration: none;
+  display: block;
+  transition: border-color .15s, transform .15s;
+}
+.ref-card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+.ref-card .rc-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--green);
+  margin-bottom: 6px;
+}
+.ref-card .rc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 4px;
+}
+.ref-card .rc-url {
+  font-size: 11px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--forest);
+  color: rgba(255,255,255,.4);
+  text-align: center;
+  padding: 18px;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+@media (max-width: 600px) {
+  .header { padding: 22px 18px; }
+  .container { padding: 28px 16px 48px; }
+  .ref-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 44" width="150" height="39">
+        <g fill="#C0A434" opacity="0.65">
+          <ellipse cx="11" cy="6" rx="4" ry="6"/>
+          <ellipse cx="6" cy="16" rx="3.5" ry="5.5" transform="rotate(-15 6 16)"/>
+          <ellipse cx="16" cy="16" rx="3.5" ry="5.5" transform="rotate(15 16 16)"/>
+          <ellipse cx="7" cy="26" rx="3" ry="5" transform="rotate(-20 7 26)"/>
+          <ellipse cx="15" cy="26" rx="3" ry="5" transform="rotate(20 15 26)"/>
+        </g>
+        <line x1="11" y1="2" x2="11" y2="44" stroke="#C0A434" stroke-width="1.5" opacity="0.35"/>
+        <rect x="24" y="4" width="36" height="36" rx="4" fill="#4B872F"/>
+        <text x="42" y="29" text-anchor="middle" font-family="Noto Sans TC,Microsoft JhengHei,sans-serif" font-size="20" font-weight="700" fill="white">禾</text>
+        <text x="70" y="21" font-family="Noto Sans TC,Microsoft JhengHei,sans-serif" font-size="15" font-weight="700" fill="white">瑞禾開發</text>
+        <text x="70" y="35" font-family="Noto Sans TC,Microsoft JhengHei,sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">建築、房產整合團隊</text>
+      </svg>
+      <div class="header-meta">2026 年 6 月 26 日 · 說明說明</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="container">
+
+  <p class="greeting">陳太太早安，</p>
+
+  <p class="body-text">我知道大家最近一直在思考該如何選擇，剛好最近也遇到一個很類似的案例，提供您做個參考。</p>
+
+  <!-- 核心結論 -->
+  <div class="hl-box">
+    <p><strong>商業不動產交易，評估的不只是價格，更重要的是交易安全性、履約能力與整體風險。</strong><br>
+    如果價格差距不大，買方背景、企業穩定性及交易成功的機率，都應該一併納入考量。</p>
+  </div>
+
+  <!-- 桃園案例 -->
+  <p class="body-text">最近除了協助興國的案件之外，我也正在協助桃園另一家公司評估購買一間廠房。</p>
+
+  <p class="body-text">前期除了確認廠房是否符合需求外，我另外安排建築師到現場評估，也找了兩家拆除公司估算拆除成本。即使其中一家是我過去在信義房屋同事介紹的廠商，我仍然會先做背景研究，確認公司的專業能力與可靠度，降低交易過程可能發生的風險。</p>
+
+  <p class="body-text">等所有資料完成後，再把完整資訊提供給業主，由業主綜合判斷。</p>
+
+  <!-- Due Diligence 概念 -->
+  <div class="concept-box">
+    <div class="concept-title">盡職調查 Due Diligence</div>
+    <p>目的就是確認交易對象的背景、履約能力、財務狀況及整體交易結構是否安全，而不是只比較價格。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 為什麼不揭露買方 -->
+  <p class="body-text">昨天李小姐也問我，為什麼另一家想整廠購買的公司，到現在業主還不知道買方是誰？</p>
+
+  <div class="gold-callout">
+    <p>從仲介的角度來看，<strong>前期保密是常見的做法</strong>，主要是避免屋主與買方私下成交，也避免買方資訊過早曝光，引發其他競爭或影響交易。</p>
+  </div>
+
+  <!-- 信任與資訊透明 -->
+  <p class="body-text">在商業不動產的交易中，<strong>信任是很重要的基礎。</strong></p>
+
+  <p class="body-text">我們與屋主、買方之間都有一定的合作關係，雙方也都是長期接觸的客戶。當時機合適時，會安排雙方直接見面，把資訊說清楚，而不是讓資訊停留在片段或透過第三方轉述。</p>
+
+  <p class="body-text">也會讓屋主了解每一個交易過程與重要資訊，包括交易對象、企業背景、交易條件及可能面臨的風險，讓屋主在資訊充分揭露的情況下，自行做出判斷。</p>
+
+  <div class="green-callout">
+    <p>我一直希望每一個案件，都能在兼顧必要保密的前提下，<strong>盡可能提高資訊透明度，降低交易中的不確定性，讓委託人能安心做決策。</strong></p>
+  </div>
+
+  <p class="body-text">因此，一旦正式進入實質談判階段，買方背景通常都會揭露，讓屋主了解交易對象，進一步評估企業背景、履約能力及整體交易風險。</p>
+
+  <div class="divider"></div>
+
+  <!-- 廠房交易風險 -->
+  <p class="body-text">尤其像廠房交易，整個流程常常會超過半年以上。如果買方所屬產業屬於高風險、景氣波動大或經營變化快速，即使出價較高，也應該把這些因素一起納入評估。</p>
+
+  <div class="concept-box">
+    <div class="concept-title">最有利標的概念</div>
+    <p>就像政府採購除了最低價標之外，也有「最有利標」的概念，評估的不只是價格，而是整體條件是否最適合。</p>
+  </div>
+
+  <!-- 統一大統益 -->
+  <div class="hl-box">
+    <p><strong>統一、大統益未必是出價最高的買方，但以企業規模、經營穩定性及履約能力來看，應該都是相對安全、穩定且值得信任的交易對象。</strong></p>
+  </div>
+
+  <p class="body-text">下面也附上我最近提供給另一家公司評估廠房時所整理的前期拆除資料，以及交易前所做的背景調查內容，提供您參考。</p>
+
+  <p class="body-text" style="color:var(--muted);font-size:13px;">至於統一、大統益，我沒有另外整理相關背景資料，是因為這兩家公司規模非常大，企業資訊公開透明，經營狀況及產業背景都相對容易查證，因此沒有再另外製作相關資料。</p>
+
+  <div class="divider"></div>
+
+  <!-- 參考資料 -->
+  <div class="ref-title">附件參考資料</div>
+  <div class="ref-grid">
+    <a class="ref-card" href="https://mac2good909777-commits.github.io/m/dy-1991/" target="_blank">
+      <div class="rc-tag">參考資料 01</div>
+      <div class="rc-title">前期拆除成本評估</div>
+      <div class="rc-url">mac2good909777-commits.github.io/m/dy-1991/</div>
+    </a>
+    <a class="ref-card" href="https://mac2good909777-commits.github.io/dy-demo-1/" target="_blank">
+      <div class="rc-tag">參考資料 02</div>
+      <div class="rc-title">交易前背景調查資料</div>
+      <div class="rc-url">mac2good909777-commits.github.io/dy-demo-1/</div>
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  瑞禾開發 · 建築、房產整合團隊 &nbsp;｜&nbsp; 機密文件，請妥善保管
+</div>
+
+</body>
+</html>
